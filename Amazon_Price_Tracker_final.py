@@ -28,16 +28,16 @@ price_lst_fin = price_lst[0].split(",")
 price = int("".join(price_lst_fin))
 print(price)
 
-# #Setting up twilio and sendiing message using twilio
-# client = Client(TWILIO_SID, TWILIO_AUTH)
+#Setting up twilio and sendiing message using twilio
+client = Client(TWILIO_SID, TWILIO_AUTH)
 
-# # #Drafting a message
-# if(price <= PRICE_MAX):
-#     message = client.messages.create(
-#         body=f"The price of the {product_name} is now {price}. Buy now!",
-#         from_=TWILIO_PHONE,
-#         to=USER_PHONE
-#     )
+# #Drafting a message
+if(price <= PRICE_MAX):
+    message = client.messages.create(
+        body=f"The price of the {product_name} is now {price}. Buy now!",
+        from_=TWILIO_PHONE,
+        to=USER_PHONE
+    )
 
 #Appending the data into CSV
 date = [str(datetime.date.today())]
